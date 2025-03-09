@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <form action="/calculate-loan" method="post">
+                        <h1 class="title">Loan Application Form</h1>
+                        <div class="field">
+                            <label class="label" for="principal">Principal Amount:</label>
+                            <div class="control">
+                                <input class="input" type="number" id="principal" name="principal" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="add_on_rate">Add-on Rate (%):</label>
+                            <div class="control">
+                                <input class="input" type="number" id="add_on_rate" name="add_on_rate" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="tenor">Tenor (months):</label>
+                            <div class="control">
+                                <input class="input" type="number" id="tenor" name="tenor" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="documentary_stamp_fee">Documentary Stamp Fee:</label>
+                            <div class="control">
+                                <input class="input" type="number" id="documentary_stamp_fee" name="documentary_stamp_fee" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="disbursement_fees">Disbursement Fees:</label>
+                            <div class="control">
+                                <input class="input" type="number" id="disbursement_fees" name="disbursement_fees" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="other_charges">Other Charges (%):</label>
+                            <div class="control">
+                                <input class="input" type="number" id="other_charges" name="other_charges" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary">Calculate Loan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculation Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h1 class="title">Loan Calculation Result</h1>
+                    <div class="box">
+                        <h2 class="subtitle">Total Loan Amount</h2>
+                        <p>{{ result.total_loan_amount }}</p>
+                    </div>
+                    <div class="box">
+                        <h2 class="subtitle">Effective Interest Rate</h2>
+                        <p>{{ result.effective_interest_rate }}%</p>
+                    </div>
+                    <div class="box">
+                        <h2 class="subtitle">Tenor</h2>
+                        <p>{{ result.tenor }} months</p>
+                    </div>
+                    <div class="box">
+                        <h2 class="subtitle">Payment Schedule</h2>
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>Payment Date</th>
+                                    <th>Payment Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for payment in result.payment_schedule %}
+                                    <tr>
+                                        <td>{{ payment.payment_date }}</td>
+                                        <td>{{ payment.payment_amount }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box">
+                        <h2 class="subtitle">Cash Flow</h2>
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>Cash Flow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cash in result.cash_flow %}
+                                    <tr>
+                                        <td>{{ cash }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
