@@ -42,7 +42,10 @@ def loan_calculator(principal, add_on_rate, tenor, documentary_stamp_fee, disbur
         "cash_flow": cash_flow,
         "effective_interest_rate": effective_interest_rate,
         "payment_schedule": payment_schedule,
-        "tenor": tenor
+        "tenor": tenor,
+        "disbursement_fees": disbursement_fees,
+        "other_charges": other_charges_rate,
+        "documentary_stamp_fee": documentary_stamp_fee
     }
 
     return json.dumps(result, indent=4)
