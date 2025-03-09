@@ -10,6 +10,10 @@ app = FastAPI()
 # Set up the templates directory using a relative path
 templates = Jinja2Templates(directory="templates")
 
+@app.get("/")
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
 @app.get("/loan-application")
 async def loan_application(request: Request):
     return templates.TemplateResponse("loan-application.html", {"request": request})
