@@ -5,19 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Calculator Service</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .main-content {
+            margin-top: 60px; /* Adjust based on header height */
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
-    <section class="hero is-primary is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title is-1">
-                    Loan Calculator Service for Rural Banks
-                </h1>
-                <a href="/loan-application" class="button is-large is-info is-outlined">
-                    Get Started
-                </a>
-            </div>
+    <div class="content-wrapper">
+        <div class="header">
+            {% include 'header.html' %}
         </div>
-    </section>
+        <div class="content main-content">
+            {% if show_loan_application %}
+                {% include 'loan-application.html' %}
+            {% elif show_loan_result %}
+                {% include 'loan-result.html' %}
+            {% else %}
+                {% include 'get-started.html' %}
+            {% endif %}
+        </div>
+        <div class="footer">
+            {% include 'footer.html' %}
+        </div>
+    </div>
 </body>
 </html>
