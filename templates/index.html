@@ -42,6 +42,8 @@
                 {% include 'loan-application.html' %}
             {% elif show_loan_result %}
                 {% include 'loan-result.html' %}
+            {% elif show_documentation %}
+                {% include 'documentation.html' %}
             {% else %}
                 {% include 'get-started.html' %}
             {% endif %}

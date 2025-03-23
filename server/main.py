@@ -29,3 +29,7 @@ async def calculate_loan(
     result = loan_calculator(principal, add_on_rate, tenor, documentary_stamp_fee, disbursement_fees, other_charges)
     result = json.loads(result)  # Convert JSON string to dictionary
     return templates.TemplateResponse("index.html", {"request": request, "show_loan_application": False, "show_loan_result": True, "result": result})
+
+@app.get("/documentation", response_class=HTMLResponse)
+async def documentation(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "show_documentation": True})
