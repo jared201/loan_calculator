@@ -33,3 +33,7 @@ async def calculate_loan(
 @app.get("/documentation", response_class=HTMLResponse)
 async def documentation(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "show_documentation": True})
+
+@app.get("/pricing", response_class=HTMLResponse)
+async def pricing(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "show_pricing": True})
